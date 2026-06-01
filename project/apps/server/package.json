@@ -1,6 +1,7 @@
 {
   "name": "@cn6035/server",
   "version": "1.0.0",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "main": "src/index.js",

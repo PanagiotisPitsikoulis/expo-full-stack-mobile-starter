@@ -1,6 +1,7 @@
 {
   "name": "@pitsi-ui/native",
   "version": "1.0.2",
+  "license": "MIT",
   "source": "./src/index.tsx",
   "main": "./src/index.tsx",
   "dependencies": {
