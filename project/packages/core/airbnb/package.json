@@ -1,0 +1,23 @@
+{
+  "name": "@repo/airbnb-core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./domain": "./src/domain/index.ts",
+    "./store": "./src/store/index.ts",
+    "./hooks": "./src/hooks/index.ts",
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "*",
+    "react": "*",
+    "zustand": "*"
+  },
+  "peerDependenciesMeta": {
+    "@tanstack/react-query": { "optional": true },
+    "react": { "optional": true },
+    "zustand": { "optional": true }
+  }
+}

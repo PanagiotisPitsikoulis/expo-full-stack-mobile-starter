@@ -1,0 +1,1 @@
+export { WishlistRoute } from "./route";

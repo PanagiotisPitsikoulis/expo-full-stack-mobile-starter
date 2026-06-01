@@ -1,0 +1,62 @@
+---
+title: Calendar
+description: Native calendar shell with month header, grid, cells, and year picker slots.
+links:
+  source_native: calendar/calendar.tsx
+---
+
+`Calendar` provides native layout and interaction slots for a calendar surface. It does not own date math or persistence; apps can pass explicit cells or render simple generated cells through the body render prop.
+
+## Import
+
+```tsx
+import { Calendar } from "@pitsi-ui/native/calendar";
+```
+
+## Usage
+
+```tsx
+<Calendar>
+  <Calendar.Header>
+    <Calendar.NavButton slot="previous" />
+    <Calendar.Heading>May 2026</Calendar.Heading>
+    <Calendar.NavButton slot="next" />
+  </Calendar.Header>
+  <Calendar.Grid>
+    <Calendar.GridHeader>
+      {weekdays.map((day) => <Calendar.HeaderCell key={day}>{day}</Calendar.HeaderCell>)}
+    </Calendar.GridHeader>
+    <Calendar.GridBody>
+      {days.map((date) => <Calendar.Cell key={date.day} date={date} />)}
+    </Calendar.GridBody>
+  </Calendar.Grid>
+</Calendar>
+```
+
+## API Reference
+
+### Calendar Slots
+
+| Slot | Description |
+| --- | --- |
+| `Calendar.Root` | Root calendar container. |
+| `Calendar.Header` | Header row for heading and navigation. |
+| `Calendar.Heading` | Current month or custom heading text. |
+| `Calendar.NavButton` | Pressable previous or next control. |
+| `Calendar.Grid` | ScrollView-backed grid wrapper. |
+| `Calendar.GridHeader` | Weekday row wrapper. |
+| `Calendar.HeaderCell` | Weekday label. |
+| `Calendar.GridBody` | Date cell row wrapper. |
+| `Calendar.Cell` | Pressable date cell. |
+| `Calendar.CellIndicator` | Small metadata indicator inside a cell. |
+
+### State Props
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `selected` | `boolean` | Marks a cell or button as selected. |
+| `isSelected` | `boolean` | Selected state alias. |
+| `disabled` | `boolean` | Native disabled state. |
+| `isDisabled` | `boolean` | Disabled state alias. |
+| `onAction` | `() => void` | Press handler alias. |
+| `onClick` | `() => void` | Web compatibility press handler alias. |

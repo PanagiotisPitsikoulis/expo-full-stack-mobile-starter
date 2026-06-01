@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "newArchEnabled": true,
+    "name": "Ainnb",
+    "slug": "ainnb",
+    "scheme": "ainnb",
+    "primaryColor": "#FF385C",
+    "backgroundColor": "#0C0C0E",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "userInterfaceStyle": "automatic",
+    "orientation": "default",
+    "ios": {
+      "backgroundColor": "#0C0C0E",
+      "bundleIdentifier": "com.pitsiuimonorepo.ainnb",
+      "icon": "./src/assets/brand/app-icon-ios.png",
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#F0F0F1",
+        "foregroundImage": "./src/assets/brand/app-icon-android-foreground.png"
+      },
+      "icon": "./src/assets/brand/app-icon-android.png",
+      "package": "com.pitsiuimonorepo.ainnb"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-system-ui",
+      [
+        "expo-maps",
+        {
+          "requestLocationPermission": true,
+          "locationPermission": "Allow Ainnb to use your location to show nearby stays and activities."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow Ainnb to use your location to suggest nearby destinations when you search."
+        }
+      ]
+    ],
+    "experiments": {
+      "reactCompiler": true,
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {}
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.DS_Store
+
+# Dependencies and generated output
+node_modules
+.turbo
+.expo
+dist
+coverage
+*.tsbuildinfo
+
+# Local config
+.env
+.env.local
+npm-debug.log*
+*.log
+.logs
+.launchd
+__airbnb
+
+# Native build folders
+ios
+android
+
+# Original presentation exports are kept locally only.
+presentation/video.mov
+presentation/images/*.png

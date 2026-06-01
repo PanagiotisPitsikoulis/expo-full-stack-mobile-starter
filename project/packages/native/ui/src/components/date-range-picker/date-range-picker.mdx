@@ -1,0 +1,47 @@
+---
+title: Date Range Picker
+description: Native date range picker trigger and popover slots for app-owned range selection.
+links:
+  source_native: date-range-picker/date-range-picker.tsx
+---
+
+`DateRangePicker` composes the date picker shell with a range separator slot. It keeps range math, calendar selection, validation, and persistence outside the primitive.
+
+## Import
+
+```tsx
+import { DateRangePicker } from "@pitsi-ui/native/date-range-picker";
+```
+
+## Usage
+
+```tsx
+<DateRangePicker>
+  <DateRangePicker.Trigger onAction={openCalendar}>
+    <Text>{startDate}</Text>
+    <DateRangePicker.RangeSeparator />
+    <Text>{endDate}</Text>
+    <DateRangePicker.TriggerIndicator />
+  </DateRangePicker.Trigger>
+  <DateRangePicker.Popover>{rangeCalendar}</DateRangePicker.Popover>
+</DateRangePicker>
+```
+
+## API Reference
+
+### DateRangePicker Slots
+
+| Slot | Description |
+| --- | --- |
+| `DateRangePicker.Root` | Root layout wrapper. |
+| `DateRangePicker.Trigger` | Pressable trigger for the current range. |
+| `DateRangePicker.RangeSeparator` | Text separator between start and end values. |
+| `DateRangePicker.TriggerIndicator` | Trailing indicator slot. |
+| `DateRangePicker.Popover` | Styled container for range calendar content. |
+
+### DateRangePicker.RangeSeparator Props
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `children` | `ReactNode` | Custom separator content. Defaults to `-`. |
+| `className` | `string` | Additional classes for the separator. |

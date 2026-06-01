@@ -1,0 +1,1 @@
+export { DetailRoute } from "./route";

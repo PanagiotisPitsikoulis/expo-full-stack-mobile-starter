@@ -1,0 +1,70 @@
+---
+title: Radio
+description: Individual native radio control for standalone selection or RadioGroup items.
+links:
+  source_native: radio/radio.tsx
+---
+
+Use `Radio` for a single selected or unselected control. It can be controlled directly with `isSelected` and `onSelectedChange`, or it can live inside `RadioGroup.Item` and read selection state from the group.
+
+## Import
+
+```tsx
+import {Radio} from "@pitsi-ui/native";
+```
+
+## Anatomy
+
+```tsx
+<Radio>
+  <Radio.Indicator>
+    <Radio.IndicatorThumb />
+  </Radio.Indicator>
+</Radio>
+```
+
+`Radio` renders a default indicator when no children are passed. Use `Radio.Indicator` and `Radio.IndicatorThumb` when a custom visual treatment is needed.
+
+## Standalone
+
+```tsx
+const [selected, setSelected] = React.useState(false);
+
+<Radio isSelected={selected} onSelectedChange={setSelected} />;
+```
+
+## With RadioGroup
+
+```tsx
+<RadioGroup value={value} onValueChange={setValue}>
+  <RadioGroup.Item value="standard">
+    <Label>Standard</Label>
+    <Radio />
+  </RadioGroup.Item>
+  <RadioGroup.Item value="express">
+    <Label>Express</Label>
+    <Radio />
+  </RadioGroup.Item>
+</RadioGroup>
+```
+
+## API Reference
+
+### Radio Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `children` | `ReactNode \| ((props: RadioRenderProps) => ReactNode)` | default indicator | Custom radio content or render function. |
+| `isSelected` | `boolean` | - | Controlled selected state when used standalone. |
+| `onSelectedChange` | `(selected: boolean) => void` | - | Called when standalone selection changes. |
+| `isDisabled` | `boolean` | `false` | Disables interaction. |
+| `isInvalid` | `boolean` | `false` | Applies invalid styling. |
+| `animation` | `AnimationRootDisableAll` | - | Disables or customizes root animation behavior. |
+| `className` | `string` | - | Classes for the root. |
+
+### Radio Slots
+
+| Slot | Description |
+| --- | --- |
+| `Radio.Indicator` | Outer radio circle. |
+| `Radio.IndicatorThumb` | Inner selected-state mark. |

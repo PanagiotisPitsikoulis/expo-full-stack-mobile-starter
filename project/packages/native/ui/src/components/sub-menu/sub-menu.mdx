@@ -1,0 +1,53 @@
+---
+title: SubMenu
+description: Expandable nested menu section for native Menu compositions.
+links:
+  source_native: sub-menu/sub-menu.tsx
+---
+
+Use `SubMenu` inside `Menu.Content` when a menu needs a collapsible group of secondary actions without leaving the current menu surface.
+
+## Import
+
+```tsx
+import {Menu, SubMenu} from "@pitsi-ui/native";
+```
+
+## Anatomy
+
+```tsx
+<SubMenu>
+  <SubMenu.Trigger textValue="More actions">
+    <Menu.ItemTitle>More actions</Menu.ItemTitle>
+    <SubMenu.TriggerIndicator />
+  </SubMenu.Trigger>
+  <SubMenu.Content>
+    <Menu.Item>
+      <Menu.ItemTitle>Duplicate</Menu.ItemTitle>
+    </Menu.Item>
+  </SubMenu.Content>
+</SubMenu>
+```
+
+`SubMenu.Trigger` controls open state. `SubMenu.TriggerIndicator` renders the rotating chevron. `SubMenu.Content` contains nested `Menu.Item` rows.
+
+## API Reference
+
+### SubMenu Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `children` | `ReactNode` | - | Trigger and content slots. |
+| `isOpen` | `boolean` | - | Controlled open state. |
+| `defaultOpen` | `boolean` | - | Initial uncontrolled open state. |
+| `onOpenChange` | `(open: boolean) => void` | - | Called when open state changes. |
+| `animation` | `SubMenuRootAnimation` | - | Root expand or collapse animation config. |
+| `className` | `string` | - | Classes for the root container. |
+
+### SubMenu Slots
+
+| Slot | Description |
+| --- | --- |
+| `SubMenu.Trigger` | Pressable row that toggles the submenu. |
+| `SubMenu.TriggerIndicator` | Animated chevron indicator. |
+| `SubMenu.Content` | Nested menu content. |

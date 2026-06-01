@@ -1,0 +1,52 @@
+---
+title: Date Picker
+description: Native date picker trigger and popover slots for composing app-owned calendar logic.
+links:
+  source_native: date-picker/date-picker.tsx
+---
+
+`DatePicker` provides the shell for date selection. It does not parse dates, own a calendar, or persist values; pass the selected text, trigger behavior, and popover content from the app or feature layer.
+
+## Import
+
+```tsx
+import { DatePicker } from "@pitsi-ui/native/date-picker";
+```
+
+## Usage
+
+```tsx
+<DatePicker>
+  <DatePicker.Trigger onAction={openCalendar}>
+    <Text>2026-05-27</Text>
+    <DatePicker.TriggerIndicator />
+  </DatePicker.Trigger>
+  <DatePicker.Popover>{calendar}</DatePicker.Popover>
+</DatePicker>
+```
+
+## API Reference
+
+### DatePicker Slots
+
+| Slot | Description |
+| --- | --- |
+| `DatePicker.Root` | Root layout wrapper. |
+| `DatePicker.Trigger` | Pressable trigger for the current date. |
+| `DatePicker.TriggerIndicator` | Trailing indicator slot. |
+| `DatePicker.Popover` | Styled container for calendar or picker content. |
+
+### DatePicker.Trigger Props
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `children` | `ReactNode` | Custom trigger content. |
+| `label` | `ReactNode` | Fallback trigger content. |
+| `title` | `ReactNode` | Compatibility fallback trigger content. |
+| `value` | `ReactNode` | Compatibility fallback trigger content. |
+| `textValue` | `string` | Text fallback for shared code. |
+| `onAction` | `() => void` | Press handler alias. |
+| `onClick` | `() => void` | Web compatibility press handler alias. |
+| `isDisabled` | `boolean` | Disabled state alias. |
+| `disabled` | `boolean` | Native disabled state. |
+| `className` | `string` | Additional classes for the trigger. |

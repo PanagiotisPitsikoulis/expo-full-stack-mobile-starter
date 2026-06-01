@@ -1,0 +1,53 @@
+---
+title: Range Calendar
+description: Native range calendar shell with shared calendar and year picker slots.
+links:
+  source_native: range-calendar/range-calendar.tsx
+---
+
+`RangeCalendar` reuses the native calendar shell for range selection. It provides the layout and slot names expected by shared code while keeping range selection state and date rules in the app.
+
+## Import
+
+```tsx
+import { RangeCalendar } from "@pitsi-ui/native/range-calendar";
+```
+
+## Usage
+
+```tsx
+<RangeCalendar>
+  <RangeCalendar.Header>
+    <RangeCalendar.NavButton slot="previous" />
+    <RangeCalendar.Heading>May 2026</RangeCalendar.Heading>
+    <RangeCalendar.NavButton slot="next" />
+  </RangeCalendar.Header>
+  <RangeCalendar.Grid>
+    <RangeCalendar.GridHeader>
+      {weekdays.map((day) => <RangeCalendar.HeaderCell key={day}>{day}</RangeCalendar.HeaderCell>)}
+    </RangeCalendar.GridHeader>
+    <RangeCalendar.GridBody>
+      {days.map((date) => <RangeCalendar.Cell key={date.day} date={date} selected={isInRange(date)} />)}
+    </RangeCalendar.GridBody>
+  </RangeCalendar.Grid>
+</RangeCalendar>
+```
+
+## API Reference
+
+### RangeCalendar Slots
+
+| Slot | Description |
+| --- | --- |
+| `RangeCalendar.Root` | Root calendar container. |
+| `RangeCalendar.Header` | Header row for heading and navigation. |
+| `RangeCalendar.Heading` | Current month or custom heading text. |
+| `RangeCalendar.NavButton` | Pressable previous or next control. |
+| `RangeCalendar.Grid` | ScrollView-backed grid wrapper. |
+| `RangeCalendar.GridHeader` | Weekday row wrapper. |
+| `RangeCalendar.HeaderCell` | Weekday label. |
+| `RangeCalendar.GridBody` | Date cell row wrapper. |
+| `RangeCalendar.Cell` | Pressable date cell. |
+| `RangeCalendar.CellIndicator` | Small metadata indicator inside a cell. |
+| `RangeCalendar.YearPickerTrigger` | Year picker trigger slot. |
+| `RangeCalendar.YearPickerGrid` | Year picker grid slot. |

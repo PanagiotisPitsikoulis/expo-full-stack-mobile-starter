@@ -1,0 +1,35 @@
+---
+title: Text
+description: Native typography wrapper that uses the configured Pitsi UI text component.
+links:
+  source_native: text/text.tsx
+---
+
+Use `Text` when native components or app surfaces need typography that respects the Pitsi UI Native provider text configuration.
+
+## Import
+
+```tsx
+import {Text} from "@pitsi-ui/native";
+```
+
+## Usage
+
+```tsx
+<Text className="text-foreground text-base font-medium">
+  Account settings
+</Text>
+```
+
+`Text` forwards props to the configured native text implementation, so it can be used anywhere a regular React Native text element is expected.
+
+## API Reference
+
+### Text Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `children` | `ReactNode` | - | Text content. |
+| `className` | `string` | - | NativeWind classes for typography and color. |
+| `style` | `TextStyle \| TextStyle[]` | - | React Native text styles. |
+| `...TextProps` | `TextProps` | - | Standard React Native text props supported by the configured text component. |

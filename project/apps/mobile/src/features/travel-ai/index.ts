@@ -1,0 +1,1 @@
+export { TravelAiRoute } from "./route";

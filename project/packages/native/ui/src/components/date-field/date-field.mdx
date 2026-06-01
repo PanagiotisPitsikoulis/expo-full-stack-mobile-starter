@@ -1,0 +1,28 @@
+---
+title: Date Field
+description: Native date field wrapper composed with DateInputGroup slots.
+links:
+  source_native: date-field/date-field.tsx
+---
+
+`DateField` groups labels, descriptions, and a `DateInputGroup` under one root. The app owns date parsing and validation.
+
+## Import
+
+```tsx
+import { DateField } from "@pitsi-ui/native/date-field";
+```
+
+## API Reference
+
+### DateField Slots
+
+| Slot | Description |
+| --- | --- |
+| `DateField.Root` | Field wrapper. |
+| `DateField.Group` | Date input group root. |
+| `DateField.InputContainer` | Flexible date input content. |
+| `DateField.Input` | Date TextInput. |
+| `DateField.Segment` | Static date segment text. |
+| `DateField.Prefix` | Leading slot. |
+| `DateField.Suffix` | Trailing slot. |

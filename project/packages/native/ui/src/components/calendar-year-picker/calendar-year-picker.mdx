@@ -1,0 +1,44 @@
+---
+title: Calendar Year Picker
+description: Native year picker slots shared by Calendar and RangeCalendar.
+links:
+  source_native: calendar-year-picker/calendar-year-picker.tsx
+---
+
+`CalendarYearPicker` is a small slot set for year selection. Calendar state remains in the app; this component only owns native structure, pressable state, and styling.
+
+## Import
+
+```tsx
+import { CalendarYearPicker } from "@pitsi-ui/native/calendar-year-picker";
+```
+
+## Usage
+
+```tsx
+<CalendarYearPicker>
+  <CalendarYearPicker.Trigger>
+    <CalendarYearPicker.TriggerHeading>2026</CalendarYearPicker.TriggerHeading>
+    <CalendarYearPicker.TriggerIndicator />
+  </CalendarYearPicker.Trigger>
+  <CalendarYearPicker.Grid>
+    <CalendarYearPicker.GridBody>
+      {years.map((year) => <CalendarYearPicker.Cell key={year} year={year}>{year}</CalendarYearPicker.Cell>)}
+    </CalendarYearPicker.GridBody>
+  </CalendarYearPicker.Grid>
+</CalendarYearPicker>
+```
+
+## API Reference
+
+### CalendarYearPicker Slots
+
+| Slot | Description |
+| --- | --- |
+| `CalendarYearPicker.Root` | Root wrapper. |
+| `CalendarYearPicker.Trigger` | Pressable trigger for opening year selection. |
+| `CalendarYearPicker.TriggerHeading` | Trigger label. |
+| `CalendarYearPicker.TriggerIndicator` | Trailing indicator slot. |
+| `CalendarYearPicker.Grid` | ScrollView-backed year grid. |
+| `CalendarYearPicker.GridBody` | Year cell row wrapper. |
+| `CalendarYearPicker.Cell` | Pressable year cell. |

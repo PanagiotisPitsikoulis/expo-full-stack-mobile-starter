@@ -1,0 +1,37 @@
+---
+title: RAC
+description: Native compatibility exports for React Aria Components-style APIs.
+links:
+  source_native: rac/index.ts
+---
+
+`rac` provides small native shims for shared code that expects React Aria Components helpers. Prefer first-class native components when building new UI.
+
+## Import
+
+```tsx
+import { Collection, I18nProvider, RouterProvider } from "@pitsi-ui/native/rac";
+```
+
+## API Reference
+
+### Layout Shims
+
+| Export | Description |
+| --- | --- |
+| `Collection` | ScrollView-backed collection wrapper. |
+| `ListLayout` | Alias for `Collection`. |
+| `TableLayout` | Alias for `Collection`. |
+| `Virtualizer` | Alias for `Collection`. |
+| `ListBoxLoadMoreItem` | Pressable load-more row. |
+
+### Providers And Hooks
+
+| Export | Description |
+| --- | --- |
+| `I18nProvider` | Fragment provider shim. |
+| `RouterProvider` | Fragment provider shim. |
+| `useLocale` | Returns `{ locale: "en-US", direction: "ltr" }`. |
+| `useFilter` | Returns basic string filtering helpers. |
+| `isRTL` | Checks right-to-left language prefixes. |
+| `getLocalizationScript` | Returns an empty native script string. |
